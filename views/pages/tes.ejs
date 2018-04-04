@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="https://bootswatch.com/4/cosmo/bootstrap.css" media="screen">
+    <!-- <link rel="stylesheet" href="https://bootswatch.com/_assets/css/custom.min.css"> -->
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="download">Cosmo <span class="caret"></span></a>
+          <div class="dropdown-menu" aria-labelledby="download">
+            <a class="dropdown-item" href="https://jsfiddle.net/bootswatch/h3fgn55j/">Open in JSFiddle</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../4/cosmo/bootstrap.min.css">bootstrap.min.css</a>
+            <a class="dropdown-item" href="../4/cosmo/bootstrap.css">bootstrap.css</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../4/cosmo/_variables.scss">_variables.scss</a>
+            <a class="dropdown-item" href="../4/cosmo/_bootswatch.scss">_bootswatch.scss</a>
+          </div>
+       </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <!-- <input class="form-control mr-sm-2" placeholder="Search" type="text"> -->
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Logout</button>
+    </form>
+  </div>
+</nav>
+
+<div id="containers" class="">
+
+<div style="overflow-x:auto;">
+<table class="table table-striped table-hover table-bordered" style="white-space: nowrap;">
+  <thead>
+  	<th>#</th>
+  	<th>Name</th>
+  	<th>Type</th>
+  	<th>IP Address</th>
+  	<th>#</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>be-sw4.4z001</td>
+      <td>onof</td>
+      <td>192.168.168.238</td> 
+      <td><button class="btn btn-primary btn-sm">Edit</button> <button class="btn btn-primary btn-sm">Delete</button></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>be-wir3.3z001bsol</td>
+      <td>onof</td>
+      <td>192.168.168.238</td>
+      <td><button class="btn btn-primary btn-sm">Edit</button> <button class="btn btn-primary btn-sm">Delete</button></td>
+    </tr>
+   </tbody>
+</table>
+</div>
+
+</div>
+
+
+<script src="https://bootswatch.com/_vendor/jquery/dist/jquery.min.js"></script>
+<script src="https://bootswatch.com/_vendor/popper.js/dist/umd/popper.min.js"></script>
+<script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="https://bootswatch.com/_assets/js/custom.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		if ($(window).width() > 500) {
+			 $('#containers').addClass('container');
+		} else {
+			 $('#containers').removeClass('container');
+		}
+	});
+</script>
+</body>
+</html>

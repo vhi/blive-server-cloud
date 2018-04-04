@@ -1,0 +1,324 @@
+[
+
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+    {
+        "name": "Zone 1",
+        "roomName": "Room 1",
+        "controllerName": "Ctrl 1",
+        "deviceType": "ac",
+        "command": "gpio1",
+        "ipAddress": "192.168.168.99"
+    },
+
+]

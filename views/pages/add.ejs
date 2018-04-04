@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+</head>
+<body>
+
+<span id="loader"></span>
+<div class="container" style="top : 20px">
+	<div class="col col-sm-5">
+		
+		<select class="form-control" id="idToken">
+			<option value="rumah123">Rumah</option>
+			<option value="kantor321">Kantor</option>
+		</select><br>
+		<input type="text" class="form-control" name="name" id="ctrlName" placeholder="Name"><br>
+		<select class="form-control" id="ctrlType">
+			<option value="switch">Switch</option>
+			<option value="infrared">Infrared</option>
+			<option value="radio">Radio Frequence</option>
+			<option value="dimmerac">Dimmer AC</option>
+			<option value="dimmerdc">Dimmer DC</option>
+		</select><br>
+		<input type="text" class="form-control" name="ip" id="ctrlIp"><br>
+		<button class="btn btn-primary" id="btnSave">Save</button>
+
+	</div>
+</div>
+
+<!-- <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script> -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+
+<script>
+$( document ).ready(function() {
+
+  $('#btnSave').click(function() {
+  	var idToken  = $('#idToken').val();
+  	var ctrlName = $('#ctrlName').val();
+  	var ctrlType = $('#ctrlType').val();
+  	var ctrlIp   = $('#ctrlIp').val();
+  	// alert(ctrlIp);
+  	// var ctrlName = $('#ctrlName').val();
+  	// /addCrtl/:name/:type/:ip
+  	$("#loader").load("http://192.168.168.78:666/addCrtl/"+idToken+"/"+ctrlName+"/"+ctrlType+"/"+ctrlIp);
+  });
+
+});
+</script>
+
+</body>
+</html>

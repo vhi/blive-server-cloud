@@ -1,0 +1,158 @@
+<% include ../partials/head %>
+
+<body>
+<div class="container">
+      <% include ../partials/nav %>
+
+      <div class="row">
+        <div class="col-sm-12">	
+        <div ng-view></div>
+        <p>
+        	<b>Controller</b>
+        	<button id="btn-add" class="btn btn-sm btn-primary float-right">Add New</button>
+        </p>
+
+        <span id="loader" style="display: none"></span>
+        <p>
+        	<div class="col-sm-6 offset-sm-3" id="form-add" style="display: none">
+            <input type="text" id="zoneId" style="display: none">
+    				<div class="form-group row">
+    					<input type="text" class="form-control form-control-sm" id="zoneName" placeholder="Zone Name">
+    				</div>
+    				<div class="form-group row">
+    					<select class="form-control form-control-sm" id="roomName">
+  							<% for(x in roomData) { %>
+  							<option value="<%= x %>"><%= roomData[x].name %></option>
+  							<% } %>
+  						</select>
+    				</div>
+    				<div class="form-group row">
+    					<select class="form-control form-control-sm" id="controllerName">
+    						<% for(x in controllerData) { %>
+  							<option value="<%= x %>"><%= controllerData[x].name %></option>
+  							<% } %>
+  						</select>
+    				</div>
+    				<div class="form-group row">
+    					<select class="form-control form-control-sm" id="type">
+  							<option id="typeAc" value="ac">Air Conditioner</option>
+  							<option id="typeCl" value="cl">Climate</option>
+  							<option id="typeCt" value="ct">Curtain</option>
+  							<option id="typeDoor" value="door">Door</option>
+  							<option id="typeLight" value="light">Light</option>
+							<option id="typeSg" value="sg">Smart Glass</option>
+  							<option id="typeTv" value="tv">Television</option>
+  							<option id="typeFan" value="fan">Fan</option>
+  							<option id="typeDvd" value="dvd">DVD Player</option>
+  							<option id="typePjt" value="pjt">Projector</option>
+  							<option id="typeAv" value="av">A/V Receiver</option>
+  							<option id="typeCctv" value="cctv">CCTV</option>
+  							<option id="typeWh" value="wh">Water Heater</option>
+  						</select>
+    				</div>
+
+            <!-- if RF -->
+            <div class="form-group row">
+              <input type="checkbox" id="isRf"><span style="color:red">&nbsp;RF Device</span>
+            </div>
+
+    				<!-- Commands -->
+            <div id="rfCommand">
+      				<div class="form-group row">
+                <input id="rfCommand-0" type="text" class="form-control form-control-sm" placeholder="Command OFF">
+                <input id="rfCommand-1" type="text" class="form-control form-control-sm" placeholder="Command ON">
+              </div>
+            </div>
+
+            <div id="noRfCommand">
+              <div class="form-group row">
+                <select class="form-control form-control-sm" id="command">
+                  <option value="none">---</option>
+                  <!-- Air Conditioner Commands -->
+                  <option class="command-i commandAc" value="AC-AC_1">AC 1</option>
+                  <option class="command-i commandAc" value="AC-AC_2">AC 2</option>
+                  <option class="command-i commandAc" value="AC-AC_3">AC 3</option>
+                  <option class="command-i commandAc" value="AC-AC_4">AC 4</option>
+                  <option class="command-i commandAc" value="AC-AC_5">AC 5</option>
+                  <option class="command-i commandAc" value="AC-AC_6">AC 6</option>
+                  <option class="command-i commandAc" value="AC-AC_7">AC 7</option>
+                  <option class="command-i commandAc" value="AC-AC_8">AC 8</option>
+                  <!-- Light Commands -->
+                  <option class="command-i commandLight" value="gpio1">GPIO 1</option>
+                  <option class="command-i commandLight" value="gpio2">GPIO 2</option>
+                  <option class="command-i commandLight" value="gpio3">GPIO 3</option>
+                  <option class="command-i commandLight" value="gpio4">GPIO 4</option>
+                  <option class="command-i commandLight" value="gpio5">GPIO 5</option>
+                  <option class="command-i commandLight" value="gpio6">GPIO 6</option>
+                  <option class="command-i commandLight" value="gpio7">GPIO 7</option>
+                  <option class="command-i commandLight" value="gpio8">GPIO 8</option>
+                  <!-- Television Commands -->
+                  <option class="command-i commandTv" value="TV-TV_1">TV 1</option>
+                  <option class="command-i commandTv" value="TV-TV_2">TV 2</option>
+                  <option class="command-i commandTv" value="TV-TV_3">TV 3</option>
+                  <option class="command-i commandTv" value="TV-TV_4">TV 4</option>
+                  <option class="command-i commandTv" value="TV-TV_5">TV 5</option>
+                  <option class="command-i commandTv" value="TV-TV_6">TV 6</option>
+                  <option class="command-i commandTv" value="TV-TV_7">TV 7</option>
+                  <option class="command-i commandTv" value="TV-TV_8">TV 8</option>
+                  <!-- Water Heater Commands -->
+                  <option class="command-i commandWh" value="WH_1">Water Heater 1</option>
+                  <option class="command-i commandWh" value="WH_2">Water Heater 2</option>
+                  <option class="command-i commandWh" value="WH_3">Water Heater 3</option>
+                  <option class="command-i commandWh" value="WH_4">Water Heater 4</option>
+                  <option class="command-i commandWh" value="WH_5">Water Heater 5</option>
+                  <option class="command-i commandWh" value="WH_6">Water Heater 6</option>
+                  <option class="command-i commandWh" value="WH_7">Water Heater 7</option>
+                  <option class="command-i commandWh" value="WH_8">Water Heater 8</option>
+                </select>
+              </div>
+            </div>
+    				<div class="form-group row">
+    					<button id="btn-save" class="btn btn-primary btn-sm btn-block">Save</button>
+    				</div>
+  			  </div>
+        </p>
+        	
+        <table id="table" class="table table-sm table-hover">
+        	<thead class="table-success">
+            <th>Id</th>
+        		<th>Name</th>
+        		<th>Room</th>
+        		<th>Controller</th>
+        		<th>Sort</th>
+            <th>RF</th>
+        		<th>Commands</th>
+        		<th>#</th>
+        	</thead>
+        	<tbody>
+        	<% for(x in data) { %>
+        		<tr>
+              <td><%= x %></td>
+        			<td><%= data[x].name %></td>
+        			<td><%= data[x].roomName %></td>
+        			<td><%= data[x].controllerName %></td>
+              <td><%= data[x].sort %></td>
+        			<td><%= data[x].rf %></td>
+        			<td><%= data[x].command %></td>
+        			<td>
+        				<button class="btn btn-sm btn-outline-info btn-edit" value="<%= data[x].zoneId %>$$<%= data[x].name %>$$<%= data[x].roomName %>$$<%= data[x].controllerName %>$$<%= data[x].sort %>$$<%= data[x].command %>">Edit</button>
+        				<button class="btn btn-sm btn-outline-danger btn-delete" value="<%= x %>">Delete</button>
+        			</td>
+        		</tr>
+        	<% } %>
+        	</tbody>
+        </table>
+
+        </div>
+      </div>
+
+
+
+      <% include ../partials/footer %>
+</div>
+</body>
+
+<% include ../partials/scripts %>
+<% include ../partials/script_zone %>
+
+</html>

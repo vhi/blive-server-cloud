@@ -1,0 +1,1 @@
+{"controller":{"1521441723411":{"name":"CCTV 1","type":"switch","ip":"192.168.168.65"}},"room":{"1521441780266":{"id":1521441780266,"name":"Demo"}},"zone":{"1521441792422":{"name":"CCTV 1","roomName":"1521441780266","controllerName":"1521441723411","sort":"cctv","rf":"false","command":"none","status":"off"}}}

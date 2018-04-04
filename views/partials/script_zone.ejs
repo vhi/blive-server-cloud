@@ -1,0 +1,140 @@
+<script>
+$( document ).ready(function() {
+  // Reload function
+  function reloadPage() {
+    location.reload();
+  }
+
+  // Showing add/edit form
+  $('#btn-add').click(function() {
+    $('#form-add').toggle();
+    if ($('#btn-add').html() == 'Cancel') $('#btn-add').html('Add New');
+    else $('#btn-add').html('Cancel');
+    // Empty the fields
+    $('#zoneId').val('');
+    $('#zoneName').val('');
+  });
+
+  // Add/edit controller
+  $('#btn-save').click(function() {
+    // Get value of form inputs
+    var zoneId          = $('#zoneId').val();
+    var zoneName        = $('#zoneName').val().replace(" ", "%20");
+    var roomName        = $('#roomName').val().replace(" ", "%20");
+    var controllerName  = $('#controllerName').val().replace(" ", "%20");
+    var type            = $('#type').val().replace(" ", "%20");
+    if ($('#isRf').prop('checked')) {
+      var isRf          = true;
+      var command       = $('#rfCommand-0').val() + ',' + $('#rfCommand-1').val();
+    } else {
+      var isRf          = false;
+      var command       = $('#command').val().replace(" ", "%20");
+    }
+    // Load adding/editing url
+    if ($('#zoneId').val() == '') {
+      $("#loader").load( "/addZone" + "/" + 
+                        zoneName + "/" +
+                        roomName + "/" +
+                        controllerName + "/" +
+                        type + "/" +
+                        isRf + "/" +
+                        command
+                        );
+    } else {
+      $("#loader").load( "/editZone" + "/" + 
+                        zoneId + "/" +
+                        zoneName + "/" +
+                        roomName + "/" +
+                        controllerName + "/" +
+                        type + "/" +
+                        isRf + "/" +
+                        command
+                        );
+    }
+    // Trigger the add button
+    $('#btn-add').click();
+    // Reload page
+    setTimeout(reloadPage, 500);
+  });
+
+  $('.btn-delete').click(function() {
+    // Load removing url
+    $("#loader").load("/removeZone/" + $(this).val());
+    // Reload page
+    setTimeout(reloadPage, 500);
+  });
+
+  $('.btn-edit').click(function() {
+    valSplitted = $(this).val().split('$$');
+    // Trigger the add button
+    $('#btn-add').click();
+    // Change the value of input form
+    $('#zoneId').val(valSplitted[0]);
+    // alert(valSplitted[1]);
+    $('#zoneName').val(valSplitted[1]);
+    // $('#roomName').val(valSplitted[1]);
+    // $('#controllerName').val(valSplitted[2]);
+    $('#type').val(valSplitted[4]);
+    $('#command').val(valSplitted[5]);
+    // Set btn add to string Cancel
+    $('#btn-add').html('Cancel');
+    // Force the form to be shown
+    $('#form-add').show();
+  });
+
+  // set setCommandSelect() function as default
+  $('#type').val('ac');
+  setCommandSelect('commandAc');
+  // alert($('#isRf').prop('checked'));
+  $('#isRf').prop('checked', false);
+  $("#rfCommand").hide();
+  $("#noRfCommand").show();
+
+  $('#type').change( function() {
+    switch($(this).val()) {
+		case 'ac' :
+			setCommandSelect('commandAc');
+        break;
+		case 'light' :
+			setCommandSelect('commandLight');
+        break;
+		case 'sg' :
+			setCommandSelect('commandLight');
+        break;
+		case 'fan' :
+			setCommandSelect('commandLight');
+        break;
+		case 'tv' :
+			setCommandSelect('commandTv');
+        break; 
+		case 'wh' :
+			setCommandSelect('commandWh');
+        break; 
+		default :
+			setCommandSelect('none');
+        break;
+    }
+  });
+
+  $('#isRf').click(function() {
+        var self = this;
+        if (self.checked) {
+          isRF = true;
+          $("#rfCommand").show();
+          $("#noRfCommand").hide();
+        } else {
+          isRF = false;
+          $("#rfCommand").hide();
+          $("#noRfCommand").show();
+        } 
+    });
+
+  function setCommandSelect(x) {
+    $('.command-i').hide();
+    $('.'+x).show();
+    $('#command').val('none');
+  }
+
+});
+
+</script>

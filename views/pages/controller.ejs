@@ -1,0 +1,74 @@
+<% include ../partials/head %>
+
+<body>
+<div class="container">
+      <% include ../partials/nav %>
+
+      <div class="row">
+        <div class="col-sm-12">	
+        <div ng-view></div>
+        <p>
+        	<b>Controller</b>
+        	<button id="btn-add" class="btn btn-sm btn-primary float-right">Add New</button>
+        </p>
+
+        <span id="loader" style="display: none"></span>
+        <p>
+        	<div class="col-sm-6 offset-sm-3" id="form-add" style="display: none">
+                    <input type="text" id="ctrlId" style="display: none">
+    				<div class="form-group row">
+    					<input type="text" class="form-control form-control-sm" id="ctrlName" placeholder="Controller Name">
+    				</div>
+    				<div class="form-group row">
+    					<select class="form-control form-control-sm" id="ctrlType">
+  						<option value="switch">Switch</option>
+  						<option value="infrared">Infrared</option>
+  						<option value="radio">Radio Frequence</option>
+  						<option value="dimmerac">Dimmer AC</option>
+  						<option value="dimmerdc">Dimmer DC</option>
+  					</select>
+    				</div>
+    				<div class="form-group row">
+    					<input type="text" class="form-control form-control-sm" name="ip" id="ctrlIp" placeholder="IP Address">
+    				</div>
+    				<div class="form-group row">
+    					<button id="btn-save" class="btn btn-primary btn-sm btn-block">Save</button>
+    				</div>
+  			  </div>
+        </p>
+        	
+        <table id="table" class="table table-sm table-hover">
+        	<thead class="table-success">
+        		<th>Name</th>
+        		<th>Type</th>
+        		<th>Ip Address</th>
+        		<th>#</th>
+        	</thead>
+        	<tbody>
+        	<% for(x in data) { %>
+        		<tr>
+        			<td><%= data[x].name %></td>
+        			<td><%= data[x].type %></td>
+        			<td><%= data[x].ip %></td>
+        			<td>
+        				<button class="btn btn-sm btn-outline-info btn-edit" value="<%= x %>$$<%= data[x].name %>$$<%= data[x].type %>$$<%= data[x].ip %>">Edit</button>
+        				<button class="btn btn-sm btn-outline-danger btn-delete" value="<%= x %>">Delete</button>
+        			</td>
+        		</tr>
+        	<% } %>
+        	</tbody>
+        </table>
+
+        </div>
+      </div>
+
+
+
+      <% include ../partials/footer %>
+</div>
+</body>
+
+<% include ../partials/scripts %>
+<% include ../partials/script_controller %>
+
+</html>

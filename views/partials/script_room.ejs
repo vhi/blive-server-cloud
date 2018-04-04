@@ -1,0 +1,59 @@
+<script>
+$( document ).ready(function() {
+  // Reload function
+  function reloadPage() {
+    location.reload();
+  }
+
+  // Showing add/edit form
+  $('#btn-add').click(function() {
+    $('#form-add').toggle();
+    if ($('#btn-add').html() == 'Cancel') $('#btn-add').html('Add New');
+    else $('#btn-add').html('Cancel');
+    // Empty the fields
+    $('#roomId').val('');
+  });
+
+  // Add/edit controller
+  $('#btn-save').click(function() {
+    // Get value of form inputs
+    var roomId   = $('#roomId').val();
+    var roomName = $('#roomName').val().replace(" ", "%20");
+    // Load adding/editing url
+    if ($('#roomId').val() == '') {
+      $("#loader").load("/addRoom/"+roomName);
+    } else {
+      $("#loader").load("/editRoom/"+roomId+"/"+roomName);
+    }
+    // $("#loader").load("/addRoom/"+roomName);
+    // Trigger the add button
+    $('#btn-add').click();
+    // Reload page
+    setTimeout(reloadPage, 500);
+  });
+
+  $('.btn-delete').click(function() {
+    // Load removing url
+    $("#loader").load("/removeRoom/" + $(this).val());
+    // Reload page
+    setTimeout(reloadPage, 500);
+  });
+
+  $('.btn-edit').click(function() {
+    valSplitted = $(this).val().split('$$');
+    // Trigger the add button
+    $('#btn-add').click();
+    // Change the value of input form  
+    $('#roomId').val(valSplitted[0]);
+    $('#roomName').val(valSplitted[1]);
+    // Set btn add to string Cancel
+    $('#btn-add').html('Cancel');
+    // Disable the name input to be edited
+    // $("#ctrlName").prop('disabled', true);
+    // Force the form to be shown
+    $('#form-add').show();
+  });
+
+});
+
+</script>
