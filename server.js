@@ -16,9 +16,9 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 /* JsonDB */
 var JsonDB 			= require('node-json-db');
-var dbController 	= new JsonDB("dbController", true, false);
-var dbUsers 		= new JsonDB("dbUsers", true, false);
-var dbRaspberryId	= new JsonDB("dbRaspberryId", true, false);
+var dbController 	= new JsonDB("data/dbController", true, false);
+var dbUsers 		= new JsonDB("data/dbUsers", true, false);
+var dbRaspberryId	= new JsonDB("data/dbRaspberryId", true, false);
 var dbRaspberryKey;
 
 /* CHECK IF USER IS LOGIN */
@@ -108,7 +108,7 @@ app.post('/action/login', function(req, res) {
 			req.session.fullName	= userData.fullName;
 			dbRaspberryToLoad 		= new JsonDB('raspiKey_' + req.params.rasperryKey, true, false);
 		}
-		dbRaspberryKey = new JsonDB('raspiKey_' + req.session.raspberryID, true, false);
+		dbRaspberryKey = new JsonDB('data/raspiKey_' + req.session.raspberryID, true, false);
 	} catch (error) {
 	    console.error(error);
 	}
@@ -190,7 +190,7 @@ app.get('/addZone/:name/:roomName/:controllerName/:deviceType/:isRf/:command', f
 				controllerName 	: req.params.controllerName,
 				sort			: req.params.deviceType,
 				rf 				: req.params.isRf,
-				command			: req.params.command.replace("-", "/"),
+				command			: req.params.command,
 				status			: 'off',
 				status_from		: 'home'
 			};
@@ -236,7 +236,7 @@ app.get('/load/raspberry', function(req, res) {
 
 //untuk disediakan ke mobile
 app.get('/load/allData/:rasperryKey', function(req, res) {
-	dbRaspberryToLoad 	= new JsonDB('raspiKey_' + req.params.rasperryKey, true, false);
+	dbRaspberryToLoad 	= new JsonDB('data/raspiKey_' + req.params.rasperryKey, true, false);
 	var datane 			= [];
 	var dataZone		= dbRaspberryToLoad.getData("/zone");
 	var jsonData		= {};
@@ -244,8 +244,10 @@ app.get('/load/allData/:rasperryKey', function(req, res) {
 		try {
 			roomId 					= dbRaspberryToLoad.getData("/room/" + dataZone[x].roomName).id;
 			roomName 				= dbRaspberryToLoad.getData("/room/" + dataZone[x].roomName).name;
+			ipAddress				= dbRaspberryToLoad.getData("/controller/" + dataZone[x].controllerName).ip;
 
 			dataZone[x].zoneId		= x;
+			dataZone[x].ipAddress   = ipAddress;
 			dataZone[x].roomName 	= roomName;
 			
 			delete dataZone[x].controllerName;
@@ -264,7 +266,7 @@ app.get('/load/allData/:rasperryKey', function(req, res) {
 
 //untuk nembak server raspberry (controlling device)
 app.get('/load/allData2/:rasperryKey', function(req, res) {
-	dbRaspberryToLoad 	= new JsonDB('raspiKey_' + req.params.rasperryKey, true, false);
+	dbRaspberryToLoad 	= new JsonDB('data/raspiKey_' + req.params.rasperryKey, true, false);
 	var datane 			= [];
 	var dataZone		= dbRaspberryToLoad.getData("/zone");
 	var jsonData		= {};
@@ -293,7 +295,7 @@ app.get('/load/allData2/:rasperryKey', function(req, res) {
 
 //untuk nembak cloud (ambil json)
 app.get('/load/jsonForRaspberry/:rasperryKey', function(req, res) {
-	dbRaspberryToLoad = new JsonDB('raspiKey_' + req.params.rasperryKey, true, false);
+	dbRaspberryToLoad = new JsonDB('data/raspiKey_' + req.params.rasperryKey, true, false);
 	//console.log(dbRaspberryToLoad);
 	data			  = dbRaspberryToLoad.getData("/");
 	res.send(data);
@@ -303,7 +305,7 @@ app.get('/load/jsonForRaspberry/:rasperryKey', function(req, res) {
 app.post('/saveFromRaspberry/:raspberryKey', function(req, res) {
 	post 		= req.body;
 	fsCobaValue = require('fs');
-	cobaValue 	= fsCobaValue.createWriteStream('raspiKey_' + req.params.raspberryKey + '.json', {flags: 'w'});
+	cobaValue 	= fsCobaValue.createWriteStream('data/raspiKey_' + req.params.raspberryKey + '.json', {flags: 'w'});
 	cobaValue.write(post.foo);
 	res.send('');
 });
@@ -325,7 +327,7 @@ app.get('/execute/:rpiId/:zoneId/:commandVal', function(req, res) {
 					if (data[x].zoneId == req.params.zoneId) {
 						zoneId = data[x].zoneId;
 
-						dbRaspberryKey = new JsonDB('raspiKey_' + req.params.rpiId, true, false);
+						dbRaspberryKey = new JsonDB('data/raspiKey_' + req.params.rpiId, true, false);
 
 						// IF RF device is true
 						if (data[x].rf == 'false') {
